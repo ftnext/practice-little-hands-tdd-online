@@ -1,19 +1,15 @@
 from unittest import TestCase
 
+from parameterized import parameterized
+
 import fizzbuzz
 
 
 class CreateTestCase(TestCase):
-    def test_should_return_number_string(self):
-        test_patterns = [
-            (1, "1"),
-            (2, "2"),
-            (4, "4"),
-        ]
-        for number, expected in test_patterns:
-            with self.subTest(number=number, expected=expected):
-                actual = fizzbuzz.create(number)
-                self.assertEqual(actual, expected)
+    @parameterized.expand([(1, "1"), (2, "2"), (4, "4")])
+    def test_should_return_number_string(self, number, expected):
+        actual = fizzbuzz.create(number)
+        self.assertEqual(actual, expected)
 
     def test_should_return_fizz(self):
         test_patterns = [
