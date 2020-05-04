@@ -34,3 +34,13 @@ class CreateTestCase(TestCase):
             with self.subTest(number=number, expected=expected):
                 actual = fizzbuzz.create(number)
                 self.assertEqual(actual, expected)
+
+    def test_should_return_fizzbuzz(self):
+        test_patterns = [
+            (15, "FizzBuzz"),
+            (30, "FizzBuzz"),
+        ]
+        for number, expected in test_patterns:
+            with self.subTest(number=number, expected=expected):
+                actual = fizzbuzz.create(number)
+                self.assertEqual(actual, expected)
