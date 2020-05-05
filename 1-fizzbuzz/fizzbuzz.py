@@ -1,4 +1,4 @@
-def create(number: int) -> str:
+def execute(number: int) -> str:
     if number % 15 == 0:
         return "FizzBuzz"
     if number % 3 == 0:

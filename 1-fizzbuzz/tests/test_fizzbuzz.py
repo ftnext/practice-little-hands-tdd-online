@@ -5,10 +5,10 @@ from parameterized import parameterized
 import fizzbuzz
 
 
-class CreateTestCase(TestCase):
+class ExecuteTestCase(TestCase):
     @parameterized.expand([(1, "1"), (2, "2"), (4, "4")])
     def test_should_return_number_string(self, number, expected):
-        actual = fizzbuzz.create(number)
+        actual = fizzbuzz.execute(number)
         self.assertEqual(actual, expected)
 
     def test_should_return_fizz(self):
@@ -18,7 +18,7 @@ class CreateTestCase(TestCase):
         ]
         for number, expected in test_patterns:
             with self.subTest(number=number, expected=expected):
-                actual = fizzbuzz.create(number)
+                actual = fizzbuzz.execute(number)
                 self.assertEqual(actual, expected)
 
     def test_should_return_buzz(self):
@@ -28,7 +28,7 @@ class CreateTestCase(TestCase):
         ]
         for number, expected in test_patterns:
             with self.subTest(number=number, expected=expected):
-                actual = fizzbuzz.create(number)
+                actual = fizzbuzz.execute(number)
                 self.assertEqual(actual, expected)
 
     def test_should_return_fizzbuzz(self):
@@ -38,5 +38,5 @@ class CreateTestCase(TestCase):
         ]
         for number, expected in test_patterns:
             with self.subTest(number=number, expected=expected):
-                actual = fizzbuzz.create(number)
+                actual = fizzbuzz.execute(number)
                 self.assertEqual(actual, expected)
